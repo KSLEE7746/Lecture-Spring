@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   					   http://www.springframework.org/schema/beans/spring-beans.xsd">
+	   <!-- MyCalculator 생성자 매개변수 넘기기 생성자 주입 방식  -->
+		<bean id="calculator" class="DI_Test.Calculator"/>	
+	    <bean id="myCalculator" class="DI_Test.MyCalculator">
+	    	<constructor-arg value="10" index="0"></constructor-arg>
+	    	<!-- <constructor-arg value="2"></constructor-arg> -->
+	    	<constructor-arg index="1"><value>2</value></constructor-arg>
+	    	<constructor-arg ref="calculator"></constructor-arg>
+	    </bean>
+</beans>
